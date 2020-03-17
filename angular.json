@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "dwarfect": {
@@ -24,13 +24,19 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "src/../node_modules/cesium/Build/Cesium",
+                "output": "./assets/cesium"
+              },
+              "src/assets",
+              "src/favicon.ico"
             ],
             "styles": [
+              "src/../node_modules/cesium/Build/Cesium/Widgets/widgets.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["src/../node_modules/cesium/Build/Cesium/Cesium.js"]
           },
           "configurations": {
             "production": {
@@ -88,13 +94,19 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "src/../node_modules/cesium/Build/Cesium",
+                "output": "./assets/cesium"
+              },
+              "src/assets",
+              "src/favicon.ico"
             ],
             "styles": [
+              "src/../node_modules/cesium/Build/Cesium/Widgets/widgets.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["src/../node_modules/cesium/Build/Cesium/Cesium.js"]
           }
         },
         "lint": {
